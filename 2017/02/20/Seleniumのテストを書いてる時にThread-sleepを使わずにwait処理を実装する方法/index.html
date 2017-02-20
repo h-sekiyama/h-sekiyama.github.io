@@ -3,17 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>しょぶろぐ</title>
+  <title>Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法 | しょぶろぐ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="しょぶろぐ">
-<meta property="og:url" content="https://mzm32997.github.io/index.html">
+  <meta name="description" content="どうも、せっきーです。いま業務でseleniumを使ったUI自動テストの実装を進めています。  
+seleniumは色んな言語で記述できるし、何ならユーザーの動作を記録して自動でテストケースを生成したり、色々できるんですが、その辺の説明は他のブログにお任せします。  
+今回やりたい事は、タイトルの通りですが、Thread.sleepを使わずに一定時間waitする処理を自前で作る方法についてです。ま">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法">
+<meta property="og:url" content="https://mzm32997.github.io/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/index.html">
 <meta property="og:site_name" content="しょぶろぐ">
-<meta property="og:description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
+<meta property="og:description" content="どうも、せっきーです。いま業務でseleniumを使ったUI自動テストの実装を進めています。  
+seleniumは色んな言語で記述できるし、何ならユーザーの動作を記録して自動でテストケースを生成したり、色々できるんですが、その辺の説明は他のブログにお任せします。  
+今回やりたい事は、タイトルの通りですが、Thread.sleepを使わずに一定時間waitする処理を自前で作る方法についてです。ま">
+<meta property="og:updated_time" content="2017-02-20T04:47:47.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="しょぶろぐ">
-<meta name="twitter:description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
+<meta name="twitter:title" content="Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法">
+<meta name="twitter:description" content="どうも、せっきーです。いま業務でseleniumを使ったUI自動テストの実装を進めています。  
+seleniumは色んな言語で記述できるし、何ならユーザーの動作を記録して自動でテストケースを生成したり、色々できるんですが、その辺の説明は他のブログにお任せします。  
+今回やりたい事は、タイトルの通りですが、Thread.sleepを使わずに一定時間waitする処理を自前で作る方法についてです。ま">
   
     <link rel="alternate" href="/atom.xml" title="しょぶろぐ" type="application/atom+xml">
   
@@ -66,9 +73,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/" class="article-date">
   <time datetime="2017-02-20T04:27:00.000Z" itemprop="datePublished">2017-02-20</time>
@@ -81,8 +86,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/">Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</a>
+    <h1 class="article-title" itemprop="name">
+      Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法
     </h1>
   
 
@@ -121,52 +126,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-初投稿" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/20/初投稿/" class="article-date">
-  <time datetime="2017-02-20T04:06:59.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/初投稿/">初投稿</a>
-    </h1>
+    <a href="/2017/02/20/初投稿/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">初投稿</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今日からブログ再開します。<br>日々のアウトプットがインプットのモチベーションになると言う話は良く聞くので、エンジニアとして日々学んだ事をつらつらとアウトプットしていく予定です。  </p>
-<p>当方のエンジニアとしての経歴はフロントエンドエンジニア5年、Android、iOSエンジニア半年（2017年2月現在）です。  </p>
-<p>エンジニアとしての職歴はほとんどがフロントエンドでした。<br>しかしこれからはスマートフォンのネイティブコードもバリバリ書けるエンジニアを目指しているので、日々邁進していきます。  </p>
-<p>とりあえず生暖かい目で見守って頂ければ幸いです。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mzm32997.github.io/2017/02/20/初投稿/" data-id="cizdmfjdk00003waidsk3qlxp" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
