@@ -1,94 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
   <title>しょぶろぐ</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="しょぶろぐ">
-<meta property="og:url" content="https://mzm32997.github.io/index.html">
-<meta property="og:site_name" content="しょぶろぐ">
-<meta property="og:description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="しょぶろぐ">
-<meta name="twitter:description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
+  <subtitle>猫好きエンジニアの勉強日記</subtitle>
+  <link href="/atom.xml" rel="self"/>
   
+  <link href="https://mzm32997.github.io/"/>
+  <updated>2017-02-24T09:41:04.000Z</updated>
+  <id>https://mzm32997.github.io/</id>
   
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  
-
-</head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">しょぶろぐ</a>
-      </h1>
-      
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">猫好きエンジニアの勉強日記</a>
-        </h2>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-          <a class="main-nav-link" href="/atom.xml">RSS</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://mzm32997.github.io"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-猫でも分かるgit rebaseの使い方" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/22/猫でも分かるgit rebaseの使い方/" class="article-date">
-  <time datetime="2017-02-22T04:09:44.000Z" itemprop="datePublished">2017-02-22</time>
-</a>
+  <author>
+    <name>せっきー</name>
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+  </author>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/22/猫でも分かるgit rebaseの使い方/">猫でも分かるgit rebaseの使い方</a>
-    </h1>
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-
-      </header>
+  <entry>
+    <title>猫でも分かるgit rebaseの使い方</title>
+    <link href="https://mzm32997.github.io/2017/02/22/%E7%8C%AB%E3%81%A6%E3%82%99%E3%82%82%E5%88%86%E3%81%8B%E3%82%8Bgit%20rebase%E3%81%AE%E4%BD%BF%E3%81%84%E6%96%B9/"/>
+    <id>https://mzm32997.github.io/2017/02/22/猫でも分かるgit rebaseの使い方/</id>
+    <published>2017-02-22T04:09:44.000Z</published>
+    <updated>2017-02-24T09:41:04.000Z</updated>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>どうも、せっきーです。  </p>
+    <content type="html"><![CDATA[<p>どうも、せっきーです。  </p>
 <p>gitを使い始めてからはや4年。<br>よく使われる一通りのgitコマンドは使いこなせる様になったかと思いきや、git rebaseはずっと苦手で、ずっとなあなあにして来ました。<br><br><br><br><br>git rebaseは言ってしまえばgitのコミットログをキレイにする為のコマンドなのですが、イマイチその有用性を実感できず、最近までひとつのプルリクにいくつもログが残ったままpushしておりました。  </p>
 <p>しかしこのままではいかんと思い、このたびgit rebaseをマスターすべく勉強してみました。<br><br><br><br><br>git rebaseを理解しようとして挫折する人の一番の壁は、コンフリクトした際に「no branch」に飛ばされてしまう現象じゃないかと個人的には思います。<br><br><br>実際にターミナルの画面を見ながら解説します。<br>まずは普通の成功例。  </p>
 <p>こんなログのブランチがあったとします。 </p>
@@ -111,45 +45,28 @@
 <p>これはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
 <p>以上がgit rebaseのやり方とつまづきドコロでした。  </p>
 <p>普段からブランチはこまめに分ける大切さを実感出来ましたね。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mzm32997.github.io/2017/02/22/猫でも分かるgit rebaseの使い方/" data-id="cizjmnu0h0000noqh1hwbniw5" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/" class="article-date">
-  <time datetime="2017-02-20T04:27:00.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
+]]></content>
     
-  </div>
-  <div class="article-inner">
+    <summary type="html">
+    
+      &lt;p&gt;どうも、せっきーです。  &lt;/p&gt;
+&lt;p&gt;gitを使い始めてからはや4年。&lt;br&gt;よく使われる一通りのgitコマンドは使いこなせる様になったかと思いきや、git rebaseはずっと苦手で、ずっとなあなあにして来ました。&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;git reb
+    
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/">Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</a>
-    </h1>
-  
-
-      </header>
+      <category term="git" scheme="https://mzm32997.github.io/tags/git/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>どうも、せっきーです。<br>いま業務でseleniumを使ったUI自動テストの実装を進めています。  </p>
+  </entry>
+  
+  <entry>
+    <title>Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</title>
+    <link href="https://mzm32997.github.io/2017/02/20/Selenium%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88%E3%82%92%E6%9B%B8%E3%81%84%E3%81%A6%E3%82%8B%E6%99%82%E3%81%ABThread-sleep%E3%82%92%E4%BD%BF%E3%82%8F%E3%81%99%E3%82%99%E3%81%ABwait%E5%87%A6%E7%90%86%E3%82%92%E5%AE%9F%E8%A3%85%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/"/>
+    <id>https://mzm32997.github.io/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/</id>
+    <published>2017-02-20T04:27:00.000Z</published>
+    <updated>2017-02-20T04:47:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>どうも、せっきーです。<br>いま業務でseleniumを使ったUI自動テストの実装を進めています。  </p>
 <p>seleniumは色んな言語で記述できるし、何ならユーザーの動作を記録して自動でテストケースを生成したり、色々できるんですが、その辺の説明は他のブログにお任せします。  </p>
 <p>今回やりたい事は、タイトルの通りですが、Thread.sleepを使わずに一定時間waitする処理を自前で作る方法についてです。<br>また、テストケースを記述する言語はJAVAになります。  </p>
 <p>seleniumでは、何らかのアクション（ボタンのクリックなど）でDOMが変化し、そのDOMの変化を待ってからその値を検証する様なテストケースの場合、その「◯◯が終わるまで待機」と言う処理を実装する方法はいくつかあるのですが、一般的に多く使われるのは、ExpectedConditionsを使ったwait処理ではないかと思います。  </p>
@@ -168,157 +85,43 @@
 <p>ただこの様に、固定の秒数待機して次の処理を行う方法は、ネットワーク速度やマシンスペックなど環境が異なると、場合によっては上手く動作しない可能性もあります。  </p>
 <p>ただ、今回seleniumでの自動テスト対象になったサイトが、bootstrapを使っており、何らかのアクションにいちいちアニメーションが入って来て、そのアニメーションの終了を検知する必要がどうしてもあったので、実装してみました。  </p>
 <p>ぜひ参考にして下さい。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mzm32997.github.io/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/" data-id="cizgfz3f10003icqhmdoydx8d" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selenium/">selenium</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-初投稿" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/02/20/初投稿/" class="article-date">
-  <time datetime="2017-02-20T04:06:59.000Z" itemprop="datePublished">2017-02-20</time>
-</a>
+]]></content>
     
-  </div>
-  <div class="article-inner">
+    <summary type="html">
+    
+      &lt;p&gt;どうも、せっきーです。&lt;br&gt;いま業務でseleniumを使ったUI自動テストの実装を進めています。  &lt;/p&gt;
+&lt;p&gt;seleniumは色んな言語で記述できるし、何ならユーザーの動作を記録して自動でテストケースを生成したり、色々できるんですが、その辺の説明は他のブログにお
+    
+    </summary>
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/02/20/初投稿/">初投稿</a>
-    </h1>
-  
-
-      </header>
+      <category term="selenium" scheme="https://mzm32997.github.io/tags/selenium/"/>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今日からブログ再開します。<br>日々のアウトプットがインプットのモチベーションになると言う話は良く聞くので、エンジニアとして日々学んだ事をつらつらとアウトプットしていく予定です。  </p>
+  </entry>
+  
+  <entry>
+    <title>初投稿</title>
+    <link href="https://mzm32997.github.io/2017/02/20/%E5%88%9D%E6%8A%95%E7%A8%BF/"/>
+    <id>https://mzm32997.github.io/2017/02/20/初投稿/</id>
+    <published>2017-02-20T04:06:59.000Z</published>
+    <updated>2017-02-20T04:18:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>今日からブログ再開します。<br>日々のアウトプットがインプットのモチベーションになると言う話は良く聞くので、エンジニアとして日々学んだ事をつらつらとアウトプットしていく予定です。  </p>
 <p>当方のエンジニアとしての経歴はフロントエンドエンジニア5年、Android、iOSエンジニア半年（2017年2月現在）です。  </p>
 <p>エンジニアとしての職歴はほとんどがフロントエンドでした。<br>しかしこれからはスマートフォンのネイティブコードもバリバリ書けるエンジニアを目指しているので、日々邁進していきます。  </p>
 <p>とりあえず生暖かい目で見守って頂ければ幸いです。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://mzm32997.github.io/2017/02/20/初投稿/" data-id="cizgfz3es0000icqh7vfzqo6n" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-</section>
-        
-          <aside id="sidebar">
-  
+]]></content>
     
-
-  
+    <summary type="html">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li></ul>
-    </div>
-  </div>
-
-
-  
+      &lt;p&gt;今日からブログ再開します。&lt;br&gt;日々のアウトプットがインプットのモチベーションになると言う話は良く聞くので、エンジニアとして日々学んだ事をつらつらとアウトプットしていく予定です。  &lt;/p&gt;
+&lt;p&gt;当方のエンジニアとしての経歴はフロントエンドエンジニア5年、Android
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a>
-    </div>
-  </div>
-
-  
+    </summary>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a></li></ul>
-    </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2017/02/22/猫でも分かるgit rebaseの使い方/">猫でも分かるgit rebaseの使い方</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/">Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/20/初投稿/">初投稿</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2017 せっきー<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-    <a href="/atom.xml" class="mobile-nav-link">RSS</a>
-  
-</nav>
+      <category term="hexo" scheme="https://mzm32997.github.io/tags/hexo/"/>
     
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-  </div>
-</body>
-</html>
+  </entry>
+  
+</feed>
