@@ -94,13 +94,13 @@
 <p>gitを使い始めてからはや4年。<br>よく使われる一通りのgitコマンドは使いこなせる様になったかと思いきや、git rebaseはずっと苦手で、ずっとなあなあにして来ました。<br><br><br><br><br>git rebaseは言ってしまえばgitのコミットログをキレイにする為のコマンドなのですが、イマイチその有用性を実感できず、最近までひとつのプルリクにいくつもログが残ったままpushしておりました。  </p>
 <p>しかしこのままではいかんと思い、このたびgit rebaseをマスターすべく勉強してみました。<br><br><br><br><br>git rebaseを理解しようとして挫折する人の一番の壁は、コンフリクトした際に「no branch」に飛ばされてしまう現象じゃないかと個人的には思います。<br><br><br>実際にターミナルの画面を見ながら解説します。<br>まずは普通の成功例。  </p>
 <p>こんなログのブランチがあったとします。 </p>
-<p><img src="https://i.gyazo.com/dcc293fa3520a8562e0980a5aacaf913.png"><br><br><br><br><br>例えば修正Bと修正Cのログをひとつにまとめたいと思った場合のコマンドは、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i HEAD~2</div></pre></td></tr></table></figure></p>
+<p><img src="https://i.gyazo.com/198e4597b35276a8309565922d784f7f.png"><br><br><br><br><br>例えば修正Bと修正Cのログをひとつにまとめたいと思った場合のコマンドは、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase -i HEAD~2</div></pre></td></tr></table></figure></p>
 <p>になります。<br>実際に打ってみます。  </p>
 <p><img src="https://i.gyazo.com/5761bac75ac98865d7972d6c9cb51a80.png">  </p>
 <p>するとこんな画面になりますので、<br>ベースとなるコミットにpick、他とまとめたいコミットにsquashを入力し、<br><img src="https://i.gyazo.com/8df69d0084dde84a005bb8e204d37aca.png">  </p>
 <p>:wqで保存します。すると、<br><img src="https://i.gyazo.com/a3150837a78b86720fe7ee9f60bfbed0.png"><br>コミットメッセージ編集画面になりますので、１行にまとめて、</p>
 <p><img src="https://i.gyazo.com/f5a992fbca73171ba3153375fbd1002c.png">  </p>
-<p>同様に:wqで保存します。<br>すると、<br><img src="https://i.gyazo.com/8a9db960b8a063543e34261c629a369a.png">  </p>
+<p>同様に:wqで保存します。<br>すると、<br><img src="https://i.gyazo.com/0e776c92dc2c5c5419952ac45d4c5cd1.png">  </p>
 <p>こんな感じでひとつのコミットにまとめられました。  </p>
 <p>しかしたまにこんな感じのエラーが出て…<br><img src="https://i.gyazo.com/f0f9168965010eee93ae592f2e4ff7e3.png">  </p>
 <p>この様に(no branch)と言う謎のブランチに飛ばされる事があります。<br><img src="https://i.gyazo.com/ee18617b98441a911f79c4d386cc0871.png">  </p>
