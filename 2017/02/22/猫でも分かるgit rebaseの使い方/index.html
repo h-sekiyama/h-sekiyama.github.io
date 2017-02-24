@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>猫でも分かるgitrebaseの使い方 | しょぶろぐ</title>
+  <meta name="author" content="せっきー">
+
+  
+  <meta name="description" content="猫を愛するエンジニアが日々の勉強の成果を公開する為のブログです。">
+  
+  
+
+  <link rel="alternate" href="/atom.xml" title="しょぶろぐ" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  
+</head>
+
+<body>
+  <header id="header" class="inner"><nav>
+  <ul>
+    
+      <li><a href="/">Home</a></li>
+    
+      <li><a href="/archives">Archives</a></li>
+    
+  </ul>
+</nav></header>
+  <div id="content" class="inner"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <header>
+    
+  
+    <h1 class="title">猫でも分かるgitrebaseの使い方</h1>
+  
+
+    <time datetime="2017-02-22T04:09:44.000Z">
+  <span class="day">22</span><span class="month">Feb</span>
+</time>
+  </header>
+  <div class="entry-content">
+    
+      <p>どうも、せっきーです。  </p>
+<p>gitを使い始めてからはや4年。<br>よく使われる一通りのgitコマンドは使いこなせる様になったかと思いきや、git rebaseはずっと苦手で、ずっとなあなあにして来ました。<br><br><br><br><br>git rebaseは言ってしまえばgitのコミットログをキレイにする為のコマンドなのですが、イマイチその有用性を実感できず、最近までひとつのプルリクにいくつもログが残ったままpushしておりました。  </p>
+<p>しかしこのままではいかんと思い、このたびgit rebaseをマスターすべく勉強してみました。<br><br><br><br><br>git rebaseを理解しようとして挫折する人の一番の壁は、コンフリクトした際に「no branch」に飛ばされてしまう現象じゃないかと個人的には思います。<br><br><br>実際にターミナルの画面を見ながら解説します。<br>まずは普通の成功例。  </p>
+<p>こんなログのブランチがあったとします。 </p>
+<p><img src="https://i.gyazo.com/dcc293fa3520a8562e0980a5aacaf913.png"><br><br><br><br><br>例えば修正Bと修正Cのログをひとつにまとめたいと思った場合のコマンドは、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">git rebase -i HEAD~2</div><div class="line">```  </div><div class="line"></div><div class="line">になります。  </div><div class="line">実際に打ってみます。  </div><div class="line">  </div><div class="line">&lt;img src=&quot;https://i.gyazo.com/5761bac75ac98865d7972d6c9cb51a80.png&quot;&gt;  </div><div class="line"></div><div class="line">するとこんな画面になりますので、  </div><div class="line">ベースとなるコミットにpick、他とまとめたいコミットにsquashを入力し、</div><div class="line">&lt;img src=&quot;https://i.gyazo.com/8df69d0084dde84a005bb8e204d37aca.png&quot;&gt;  </div><div class="line"></div><div class="line">:wqで保存します。すると、  </div><div class="line">&lt;img src=&quot;https://i.gyazo.com/a3150837a78b86720fe7ee9f60bfbed0.png&quot;&gt;  </div><div class="line">コミットメッセージ編集画面になりますので、１行にまとめて、</div><div class="line"></div><div class="line">&lt;img src=&quot;https://i.gyazo.com/f5a992fbca73171ba3153375fbd1002c.png&quot;&gt;  </div><div class="line"></div><div class="line">同様に:wqで保存します。  </div><div class="line">すると、  </div><div class="line">&lt;img src=&quot;https://i.gyazo.com/8a9db960b8a063543e34261c629a369a.png&quot;&gt;  </div><div class="line"></div><div class="line">こんな感じでひとつのコミットにまとめられました。  </div><div class="line"></div><div class="line">しかしたまにこんな感じのエラーが出て…  </div><div class="line">&lt;img src=&quot;https://i.gyazo.com/f0f9168965010eee93ae592f2e4ff7e3.png&quot;&gt;  </div><div class="line"></div><div class="line">この様に(no branch)と言う謎のブランチに飛ばされる事があります。  </div><div class="line">&lt;img src=&quot;https://i.gyazo.com/ee18617b98441a911f79c4d386cc0871.png&quot;&gt;  </div><div class="line"></div><div class="line">これはrebaseする事によりコンフリクトが起こる為、自動的にマージ出来ない場合に起きます。  </div><div class="line"></div><div class="line">そうなった場合は冷静にコンフリクトしているファイルを確認し、</div></pre></td></tr></table></figure></p>
+<p>git add<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">して、</div></pre></td></tr></table></figure></p>
+<p>git rebase –continue<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">すればOKです。</div><div class="line">ただ、その時点ではまだno branchにいるので、  </div><div class="line">マージした内容を、元いたブランチにpushする必要があるのですが、普通に</div></pre></td></tr></table></figure></p>
+<p>git push origin (hoge)<br>```<br>と打ってもエラーになりますので、-fコマンドを使いましょう。  </p>
+<p>これはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
+<p>以上がgit rebaseのやり方とつまづきドコロでした。  </p>
+<p>普段からブランチはこまめに分ける大切さを実感出来ましたね。</p>
+
+    
+    
+    <footer class="meta">
+      
+      
+  <div class="tags">
+<a href="/tags/git/">git</a></div>
+
+      
+    </footer>
+    
+  </div>
+  
+</article></div>
+  <footer id="footer" class="inner"><div class="social alignright">
+  
+  
+  
+  
+  <a class="rss" href="/atom.xml" title="RSS">RSS</a>
+</div>
+<p>
+  
+  &copy; 2017 せっきー
+  
+</p>
+<div class="clearfix"></div></footer>
+  <script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<div id="phasebeam">
+  <canvas></canvas>
+  <canvas></canvas>
+  <canvas></canvas>
+</div>
+<script src="/js/phasebeam.js"></script>
+</body>
+</html>
