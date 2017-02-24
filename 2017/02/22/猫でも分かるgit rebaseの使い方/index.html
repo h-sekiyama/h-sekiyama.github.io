@@ -21,7 +21,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
 <meta property="og:image" content="https://i.gyazo.com/0e776c92dc2c5c5419952ac45d4c5cd1.png">
 <meta property="og:image" content="https://i.gyazo.com/f0f9168965010eee93ae592f2e4ff7e3.png">
 <meta property="og:image" content="https://i.gyazo.com/ee18617b98441a911f79c4d386cc0871.png">
-<meta property="og:updated_time" content="2017-02-24T08:04:25.000Z">
+<meta property="og:updated_time" content="2017-02-24T08:08:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猫でも分かるgitrebaseの使い方">
 <meta name="twitter:description" content="どうも、せっきーです。  
@@ -68,9 +68,9 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://mzm32997.github.io"></form>
@@ -116,9 +116,10 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
 <p>しかしたまにこんな感じのエラーが出て…<br><img src="https://i.gyazo.com/f0f9168965010eee93ae592f2e4ff7e3.png">  </p>
 <p>この様に(no branch)と言う謎のブランチに飛ばされる事があります。<br><img src="https://i.gyazo.com/ee18617b98441a911f79c4d386cc0871.png">  </p>
 <p>これはrebaseする事によりコンフリクトが起こる為、自動的にマージ出来ない場合に起きます。  </p>
-<p>そうなった場合は冷静にコンフリクトしているファイルを確認し、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add</div></pre></td></tr></table></figure></p>
-<p>して、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
-<p>すればOKです。<br>ただ、その時点ではまだno branchにいるので、<br>マージした内容を、元いたブランチにpushする必要があるのですが、普通に<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure></p>
+<p>そうなった場合は冷静にコンフリクトしているファイルを確認してそのファイルのコンフリクトを解消して、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add</div></pre></td></tr></table></figure></p>
+<p>そして通常ならこのままgit commitしたくなりますが、そうではなく、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
+<p>と打ちます。<br>こうする事でコンフリクトを解消した上で、rebaseできます。  </p>
+<p>ただ、その時点ではまだno branchにいるので、<br>マージした内容を、元いたブランチにpushする必要があるのですが、普通に<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure></p>
 <p>と打ってもエラーになりますので、-fコマンドを使いましょう。  </p>
 <p>これはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
 <p>以上がgit rebaseのやり方とつまづきドコロでした。  </p>
@@ -127,7 +128,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://mzm32997.github.io/2017/02/22/猫でも分かるgit rebaseの使い方/" data-id="cizjhu5dk0000muqhs4ngo7xg" class="article-share-link">Share</a>
+      <a data-url="https://mzm32997.github.io/2017/02/22/猫でも分かるgit rebaseの使い方/" data-id="cizjhu5dk0000muqhs4ngo7xg" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -140,7 +141,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
   
     <a href="/2017/02/20/Seleniumのテストを書いてる時にThread-sleepを使わずにwait処理を実装する方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</div>
     </a>
   
@@ -158,7 +159,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li></ul>
     </div>
@@ -168,7 +169,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a>
     </div>
@@ -187,7 +188,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
@@ -216,7 +217,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 せっきー<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
