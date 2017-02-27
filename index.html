@@ -106,11 +106,12 @@
 <p>そうなった場合は冷静にコンフリクトしているファイルを確認してそのファイルのコンフリクトを解消して、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git add</div></pre></td></tr></table></figure></p>
 <p>そして通常ならこのままgit commitしたくなりますが、そうではなく、<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git rebase --continue</div></pre></td></tr></table></figure></p>
 <p>と打ちます。<br>こうする事でコンフリクトを解消した上で、rebaseできます。  </p>
-<p>ただ、その時点ではまだno branchにいるので、<br>マージした内容を、元いたブランチにpushする必要があるのですが、普通に<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure></p>
-<p>と打ってもエラーになりますので、-fコマンドを使いましょう。  </p>
-<p>これはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
-<p>以上がgit rebaseのやり方とつまづきドコロでした。  </p>
-<p>普段からブランチはこまめに分ける大切さを実感出来ましたね。</p>
+<p>そしてブランチの位置もno branchではなく、元いたブランチに戻って来てます。</p>
+<p>さて、ここまででコミットログをキレイに出来たのですが、いよいよコミット結果をリモートブランチにpushしたいのですが、普通に</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure>
+<p>と打ってもエラーになります。<br>なのでここでは-fコマンドを使いましょう。  </p>
+<p>このオプションはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
+<p>以上、git rebaseのやり方とつまづきドコロでした。  </p>
 
       
     </div>
