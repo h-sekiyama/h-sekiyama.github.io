@@ -4,9 +4,9 @@
   <subtitle>猫好きエンジニアの勉強日記</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://mzm32997.github.io/"/>
+  <link href="https://h-sekiyama.github.io/"/>
   <updated>2017-02-27T08:22:31.000Z</updated>
-  <id>https://mzm32997.github.io/</id>
+  <id>https://h-sekiyama.github.io/</id>
   
   <author>
     <name>せっきー</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>猫でも分かるgit rebaseの使い方</title>
-    <link href="https://mzm32997.github.io/2017/02/22/2/"/>
-    <id>https://mzm32997.github.io/2017/02/22/2/</id>
+    <link href="https://h-sekiyama.github.io/2017/02/22/2/"/>
+    <id>https://h-sekiyama.github.io/2017/02/22/2/</id>
     <published>2017-02-22T04:09:44.000Z</published>
     <updated>2017-02-27T08:22:31.000Z</updated>
     
@@ -56,14 +56,14 @@
     </summary>
     
     
-      <category term="git" scheme="https://mzm32997.github.io/tags/git/"/>
+      <category term="git" scheme="https://h-sekiyama.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</title>
-    <link href="https://mzm32997.github.io/2017/02/20/3/"/>
-    <id>https://mzm32997.github.io/2017/02/20/3/</id>
+    <link href="https://h-sekiyama.github.io/2017/02/20/3/"/>
+    <id>https://h-sekiyama.github.io/2017/02/20/3/</id>
     <published>2017-02-20T04:27:00.000Z</published>
     <updated>2017-02-20T04:47:47.000Z</updated>
     
@@ -96,14 +96,14 @@
     </summary>
     
     
-      <category term="selenium" scheme="https://mzm32997.github.io/tags/selenium/"/>
+      <category term="selenium" scheme="https://h-sekiyama.github.io/tags/selenium/"/>
     
   </entry>
   
   <entry>
     <title>初投稿</title>
-    <link href="https://mzm32997.github.io/2017/02/20/1/"/>
-    <id>https://mzm32997.github.io/2017/02/20/1/</id>
+    <link href="https://h-sekiyama.github.io/2017/02/20/1/"/>
+    <id>https://h-sekiyama.github.io/2017/02/20/1/</id>
     <published>2017-02-20T04:06:59.000Z</published>
     <updated>2017-02-20T04:18:49.000Z</updated>
     
@@ -121,7 +121,7 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://mzm32997.github.io/tags/hexo/"/>
+      <category term="hexo" scheme="https://h-sekiyama.github.io/tags/hexo/"/>
     
   </entry>
   
