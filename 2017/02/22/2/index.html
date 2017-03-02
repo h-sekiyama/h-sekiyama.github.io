@@ -21,7 +21,8 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
 <meta property="og:image" content="https://i.gyazo.com/0e776c92dc2c5c5419952ac45d4c5cd1.png">
 <meta property="og:image" content="https://i.gyazo.com/f0f9168965010eee93ae592f2e4ff7e3.png">
 <meta property="og:image" content="https://i.gyazo.com/ee18617b98441a911f79c4d386cc0871.png">
-<meta property="og:updated_time" content="2017-02-27T08:22:31.000Z">
+<meta property="og:image" content="https://i.gyazo.com/661474af4e979d62805d3825e8b1f90e.png">
+<meta property="og:updated_time" content="2017-03-02T04:17:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="猫でも分かるgit rebaseの使い方">
 <meta name="twitter:description" content="どうも、せっきーです。  
@@ -68,7 +69,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
       </nav>
       <nav id="sub-nav">
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://h-sekiyama.github.io"></form>
@@ -120,14 +121,16 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
 <p>そしてブランチの位置もno branchではなく、元いたブランチに戻って来てます。</p>
 <p>さて、ここまででコミットログをキレイに出来たのですが、いよいよコミット結果をリモートブランチにpushしたいのですが、普通に</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure>
-<p>と打ってもエラーになります。<br>なのでここでは-fコマンドを使いましょう。  </p>
-<p>このオプションはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
+<p>と打っても以下の様なエラーになります。</p>
+<p><img src="https://i.gyazo.com/661474af4e979d62805d3825e8b1f90e.png"></p>
+<p>なのでここでは-fコマンドを使いましょう。  </p>
+<p>このオプションは上記エラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
 <p>以上、git rebaseのやり方とつまづきドコロでした。  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://h-sekiyama.github.io/2017/02/22/2/" data-id="cizoxl2hj0001twqhknr68vtu" class="article-share-link">Partager</a>
+      <a data-url="https://h-sekiyama.github.io/2017/02/22/2/" data-id="cizoxl2hj0001twqhknr68vtu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
@@ -140,7 +143,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
   
     <a href="/2017/02/20/3/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">Seleniumのテストを書いてる時にThread.sleepを使わずにwait処理を実装する方法</div>
     </a>
   
@@ -158,7 +161,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/selenium/">selenium</a></li></ul>
     </div>
@@ -168,7 +171,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/selenium/" style="font-size: 10px;">selenium</a>
     </div>
@@ -187,7 +190,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -216,7 +219,7 @@ gitを使い始めてからはや4年。よく使われる一通りのgitコマ�
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 せっきー<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://h-sekiyama.github.io/"/>
-  <updated>2017-02-27T08:22:31.000Z</updated>
+  <updated>2017-03-02T04:17:04.000Z</updated>
   <id>https://h-sekiyama.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://h-sekiyama.github.io/2017/02/22/2/"/>
     <id>https://h-sekiyama.github.io/2017/02/22/2/</id>
     <published>2017-02-22T04:09:44.000Z</published>
-    <updated>2017-02-27T08:22:31.000Z</updated>
+    <updated>2017-03-02T04:17:04.000Z</updated>
     
     <content type="html"><![CDATA[<p>どうも、せっきーです。  </p>
 <p>gitを使い始めてからはや4年。<br>よく使われる一通りのgitコマンドは使いこなせる様になったかと思いきや、git rebaseはずっと苦手で、ずっとなあなあにして来ました。<br><br><br><br><br>git rebaseは言ってしまえばgitのコミットログをキレイにする為のコマンドなのですが、イマイチその有用性を実感できず、最近までひとつのプルリクにいくつもログが残ったままpushしておりました。  </p>
@@ -43,8 +43,10 @@
 <p>そしてブランチの位置もno branchではなく、元いたブランチに戻って来てます。</p>
 <p>さて、ここまででコミットログをキレイに出来たのですが、いよいよコミット結果をリモートブランチにpushしたいのですが、普通に</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push origin (hoge)</div></pre></td></tr></table></figure>
-<p>と打ってもエラーになります。<br>なのでここでは-fコマンドを使いましょう。  </p>
-<p>このオプションはエラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
+<p>と打っても以下の様なエラーになります。</p>
+<p><img src="https://i.gyazo.com/661474af4e979d62805d3825e8b1f90e.png"></p>
+<p>なのでここでは-fコマンドを使いましょう。  </p>
+<p>このオプションは上記エラーがあっても強制的にpushするコマンドなので、自分以外が触っている可能性があるブランチでは使わない様に。  </p>
 <p>以上、git rebaseのやり方とつまづきドコロでした。  </p>
 ]]></content>
     
